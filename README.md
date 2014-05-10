@@ -8,11 +8,11 @@ I use repo to manage projects from work, so there are some features I'd like to 
 TODO features
 ====
 
-- Interactive commits
-- Pull instead of sync
-- Push instead of upload
-- Fetch and rebase
-- git log --branches --not --remotes=origin/\*
-- Tags
-- Option for sync not to delete projects that are not in manifest
-
+- [ ] Interactive commits
+- [ ] Pull instead of check out in sync
+- [ ] Push instead of upload
+- [ ] Fetch and rebase
+- [ ] git log --branches --not --remotes=origin/\*
+- [ ] Tags
+- [x] Default not to delete obsolete projects
+- [ ] --delete-obsolete option to delete obsolete projects
