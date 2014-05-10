@@ -427,6 +427,9 @@ later is required to fix a server side protocol bug.
         old_project_paths = fd.read().split('\n')
       finally:
         fd.close()
+      #TODO: Take away the delete part here.
+      #Use --delete-obsolete option to trigger in the future.
+      """
       for path in old_project_paths:
         if not path:
           continue
@@ -464,6 +467,7 @@ later is required to fix a server side protocol bug.
                 except OSError:
                   break
                 project_dir = os.path.dirname(project_dir)
+      """
 
     new_project_paths.sort()
     fd = open(file_path, 'w')
