@@ -2610,7 +2610,7 @@ class MetaProject(Project):
                      objdir = gitdir,
                      worktree = worktree,
                      remote = RemoteSpec('origin'),
-                     relpath = '.repo/%s' % name,
+                     relpath = '.mrepo/%s' % name,
                      revisionExpr = 'refs/heads/master',
                      revisionId = None,
                      groups = None)
