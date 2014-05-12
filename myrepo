@@ -22,7 +22,8 @@ REPO_REV = 'master'
 # limitations under the License.
 
 # increment this whenever we make important changes to this script
-VERSION = (1, 21)
+#VERSION = (1, 21)
+VERSION = (0, 1)
 
 # increment this if the MAINTAINER_KEYS block is modified
 KEYRING_VERSION = (1, 2)
