@@ -20,7 +20,8 @@ import os
 
 
 def WrapperPath():
-  return os.path.join(os.path.dirname(__file__), 'repo')
+  #return os.path.join(os.path.dirname(__file__), 'repo')
+  return os.path.join(os.path.dirname(__file__), '')
 
 _wrapper_module = None
 def Wrapper():
