@@ -187,7 +187,7 @@ def _MyRepoPath():
 
 def _CheckWrapperVersion(ver, repo_path):
   if not repo_path:
-    repo_path = '~/bin/repo'
+    repo_path = '~/bin/myrepo'
 
   if not ver:
     print('no --wrapper-version argument', file=sys.stderr)
