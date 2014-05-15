@@ -203,6 +203,11 @@ later is required to fix a server side protocol bug.
     p.add_option('--no-tags',
                  dest='no_tags', action='store_true',
                  help="don't fetch tags")
+    # Add -o option for "delete obsolete projects"
+    p.add_option('-D', '--delete-obsolete',
+                 dest='delete_obsolete', action='store_true',
+                 help='delete obsolete projects')
+    # end
     if show_smart:
       p.add_option('-s', '--smart-sync',
                    dest='smart_sync', action='store_true',
@@ -412,7 +417,7 @@ later is required to fix a server side protocol bug.
     else:
       self.manifest._Unload()
 
-  def UpdateProjectList(self):
+  def UpdateProjectList(self, delete_obsolete=False):
     new_project_paths = []
     for project in self.GetProjects(None, missing_ok=True):
       if project.relpath:
@@ -421,15 +426,13 @@ later is required to fix a server side protocol bug.
     file_path = os.path.join(self.manifest.repodir, file_name)
     old_project_paths = []
 
-    if os.path.exists(file_path):
+    if os.path.exists(file_path) and delete_obsolete:
       fd = open(file_path, 'r')
       try:
         old_project_paths = fd.read().split('\n')
       finally:
         fd.close()
-      #TODO: Take away the delete part here.
-      #Use --delete-obsolete option to trigger in the future.
-      """
+
       for path in old_project_paths:
         if not path:
           continue
@@ -467,7 +470,6 @@ later is required to fix a server side protocol bug.
                 except OSError:
                   break
                 project_dir = os.path.dirname(project_dir)
-      """
 
     new_project_paths.sort()
     fd = open(file_path, 'w')
@@ -667,7 +669,7 @@ later is required to fix a server side protocol bug.
       # bail out now, we have no working tree
       return
 
-    if self.UpdateProjectList():
+    if self.UpdateProjectList(opt.delete_obsolete):
       sys.exit(1)
 
     syncbuf = SyncBuffer(mp.config,
