@@ -454,7 +454,7 @@ def _Main(argv):
 
   opt = optparse.OptionParser(usage="repo wrapperinfo -- ...")
   opt.add_option("--repo-dir", dest="repodir",
-                 help="path to .mrepo/")
+                 help="path to .repo/")
   opt.add_option("--wrapper-version", dest="wrapper_version",
                  help="version of the wrapper script")
   opt.add_option("--wrapper-path", dest="wrapper_path",

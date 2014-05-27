@@ -45,7 +45,7 @@ class Init(InteractiveCommand, MirrorSafeCommand):
   helpDescription = """
 The '%prog' command is run once to install and initialize repo.
 The latest repo source code and manifest collection is downloaded
-from the server and is installed in the .mrepo/ directory in the
+from the server and is installed in the .repo/ directory in the
 current working directory.
 
 The optional -b argument can be used to select the manifest branch
@@ -158,7 +158,7 @@ to update the working directory files.
         if not mirrored_manifest_git.endswith(".git"):
           mirrored_manifest_git += ".git"
         if not os.path.exists(mirrored_manifest_git):
-          mirrored_manifest_git = os.path.join(opt.reference + '/.mrepo/manifests.git')
+          mirrored_manifest_git = os.path.join(opt.reference + '/.repo/manifests.git')
 
       m._InitGitDir(mirror_git=mirrored_manifest_git)
 
@@ -381,7 +381,7 @@ to update the working directory files.
       opt.reference = os.path.expanduser(opt.reference)
 
     # Check this here, else manifest will be tagged "not new" and init won't be
-    # possible anymore without removing the .mrepo/manifests directory.
+    # possible anymore without removing the .repo/manifests directory.
     if opt.archive and opt.mirror:
       print('fatal: --mirror and --archive cannot be used together.',
             file=sys.stderr)

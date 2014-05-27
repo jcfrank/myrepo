@@ -38,7 +38,7 @@ class Diffmanifests(PagedCommand):
 The %prog command shows differences between project revisions of manifest1 and
 manifest2. if manifest2 is not specified, current manifest.xml will be used
 instead. Both absolute and relative paths may be used for manifests. Relative
-paths start from project's ".mrepo/manifests" folder.
+paths start from project's ".repo/manifests" folder.
 
 The --raw option Displays the diff in a way that facilitates parsing, the
 project pattern will be <status> <path> <revision from> [<revision to>] and the
