@@ -15,4 +15,5 @@ TODO features
 - [ ] git log --branches --not --remotes=origin/\*
 - [ ] Tags
 - [x] Default not to delete obsolete projects
-- [ ] --delete-obsolete option to delete obsolete projects
+- [x] -D, --delete-obsolete option to delete obsolete projects
+
