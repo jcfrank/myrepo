@@ -199,7 +199,7 @@ def _CheckWrapperVersion(ver, repo_path):
     ver = (0, ver[0])
 
   exp_str = '.'.join(map(str, exp))
-  if exp[0] > ver[0]:
+  if exp[0] > ver[0] or ver < (0, 4):
     print("""
 !!! A new repo command (%5s) is available.    !!!
 !!! You must upgrade before you can continue:   !!!
